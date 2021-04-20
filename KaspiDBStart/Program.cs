@@ -10,9 +10,19 @@ namespace KaspiDBStart
 {
     class Program
     {
-        static void Main(string[] args) { 
-        
-            string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+        static void Main(string[] args)
+        {
+
+            using (Production Production = new Production())
+            {
+                foreach (Product u in Production.Product)
+                {
+                    Console.WriteLine($"{u.Name} with number {u.ProductNumber}");
+                }
+            }
+            Console.ReadKey();
+
+            /*string connectionString = ConfigurationManager.ConnectionStrings[""].ConnectionString;
             string SqlExpression = "SELECT IIN, FromDate, Type, Money FROM Client c JOIN [Identity] i ON c.IdentityId = i.id JOIN Contract con ON c.ContractId = con.id JOIN IBAN iban ON con.IBANId = iban.id";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -38,6 +48,7 @@ namespace KaspiDBStart
             }
             Console.ReadKey();
             Console.WriteLine("Подключение закрыто...");
+        }*/
         }
     }
 }
