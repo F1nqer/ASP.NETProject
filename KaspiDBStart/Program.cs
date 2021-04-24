@@ -5,50 +5,47 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
 using System.Data.SqlClient;
-
+using DbModels.Production;
+using DbModels.Sales;
+using DbModels.Person;
 namespace KaspiDBStart
 {
     class Program
     {
         static void Main(string[] args)
         {
+            //Production
+            MainRepository<Product> ProductionProductRep = new MainRepository<Product>(new Production());
+            MainRepository<ProductCategory> ProductionProductCategoryRep = new MainRepository<ProductCategory>(new Production());
+            MainRepository<ProductDescription> ProductionProductDescriptionRep = new MainRepository<ProductDescription>(new Production());
+            MainRepository<ProductInventory> ProductionProductInventoryRep = new MainRepository<ProductInventory>(new Production());
+            MainRepository<ProductListPriceHistory> ProductionProductListPriceHistoryRep = new MainRepository<ProductListPriceHistory>(new Production());
+            MainRepository<ProductPhoto> ProductionProductPhotoRep = new MainRepository<ProductPhoto>(new Production());
+            MainRepository<ProductProductPhoto> ProductionProductProductPhotoRep =  new MainRepository<ProductProductPhoto>(new Production());
 
-            using (Production Production = new Production())
-            {
-                foreach (Product u in Production.Product)
+            //Sales
+            MainRepository<Customer> SalesCustomerRep = new MainRepository<Customer>(new Sales());
+            MainRepository<SalesPerson> SalesPersonRep = new MainRepository<SalesPerson>(new Sales());
+            MainRepository<SalesOrderHeader> SalesOrderHeaderRep = new MainRepository<SalesOrderHeader>(new Sales());
+            MainRepository<SalesOrderDetail> SSalesOrderDetailRep = new MainRepository<SalesOrderDetail>(new Sales());
+            MainRepository<ShoppingCartItem> ShoppingCartItemRep = new MainRepository<ShoppingCartItem>(new Sales());
+            MainRepository<SalesTerritory> SalesTerritoryRep = new MainRepository<SalesTerritory>(new Sales());
+
+            //Persons
+            MainRepository<Address> PersonAddressRep = new MainRepository<Address>(new Persons());
+            MainRepository<BusinessEntity> PersonBusinessEntityRep = new MainRepository<BusinessEntity>(new Persons());
+            MainRepository<BusinessEntityAddress> PersonBusinessEntityAddressRep = new MainRepository<BusinessEntityAddress>(new Persons());
+            MainRepository<PersonPhone> PersonPhoneRep = new MainRepository<PersonPhone>(new Persons());
+            MainRepository<StateProvince> PersonStateProvinceRep = new MainRepository<StateProvince>(new Persons());
+
+            IEnumerable<Product> ProductionProduct = ProductionProductRep.Read();
+
+                foreach (Product u in ProductionProduct)
                 {
                     Console.WriteLine($"{u.Name} with number {u.ProductNumber}");
                 }
-            }
+            
             Console.ReadKey();
-
-            /*string connectionString = ConfigurationManager.ConnectionStrings[""].ConnectionString;
-            string SqlExpression = "SELECT IIN, FromDate, Type, Money FROM Client c JOIN [Identity] i ON c.IdentityId = i.id JOIN Contract con ON c.ContractId = con.id JOIN IBAN iban ON con.IBANId = iban.id";
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                SqlCommand selected = new SqlCommand(SqlExpression, connection);
-                SqlDataReader reader = selected.ExecuteReader();
-                if (reader.HasRows) // если есть данные
-                {
-                    // выводим названия столбцов
-                    Console.WriteLine("{0}\t{1}\t{2}", reader.GetName(0), reader.GetName(1), reader.GetName(2), reader.GetName(3));
-
-                    while (reader.Read()) // построчно считываем данные
-                    {
-                        object IIN = reader.GetValue(0);
-                        DateTime date = reader.GetDateTime(1);
-                        string type = reader.GetString(2);
-                        object money = reader.GetValue(3);
-
-                        Console.WriteLine("{0} \t{1} \t{2} \t{3}", IIN, date, type, money);
-                    }
-                }
-                reader.Close();
-            }
-            Console.ReadKey();
-            Console.WriteLine("Подключение закрыто...");
-        }*/
         }
     }
 }
