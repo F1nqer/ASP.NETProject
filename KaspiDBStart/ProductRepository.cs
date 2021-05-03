@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DbModels.Production;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -8,17 +9,27 @@ using System.Threading.Tasks;
 
 namespace KaspiDBStart
 {
-    public class MainRepository<TEntity> : IRepository<TEntity> where TEntity : class
+    public class ProductRepository<TEntity> : IRepository<Product> 
     {
         DbContext _context;
         DbSet<TEntity> _dbSet;
-        
-        public MainRepository(DbContext context)
+
+        public ProductRepository()
         {
-            _context = context;
-            _dbSet = context.Set<TEntity>();
+            _context = new Production();
+            db = new Production();
+            _dbSet = _context.Set<TEntity>();
         }
 
+        public IQueryable<Product> GetWithPhotos()
+        {
+            IQueryable<Product> ProductsWithPhotos = from product in db.Product
+                                     join productproductphoto in db.ProductProductPhoto on product.ProductID equals productproductphoto.ProductID
+                                     join productphoto in db.ProductPhoto on productproductphoto.ProductPhotoID equals productphoto.ProductPhotoID
+                                     select product;
+            return ProductsWithPhotos;
+        }
+            
         public IEnumerable<TEntity> Read()
         {
             return _dbSet.AsNoTracking().ToList();

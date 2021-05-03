@@ -83,6 +83,7 @@
     <Compile Include="Production\ProductProductPhoto.cs" />
     <Compile Include="Production\ProductReview.cs" />
     <Compile Include="Production\ProductSubcategory.cs" />
+    <Compile Include="Production\ProductWithPhotos.cs" />
     <Compile Include="Production\ScrapReason.cs" />
     <Compile Include="Production\TransactionHistory.cs" />
     <Compile Include="Production\TransactionHistoryArchive.cs" />

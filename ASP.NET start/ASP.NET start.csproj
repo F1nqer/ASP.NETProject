@@ -187,13 +187,13 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BusinessLogics\BusinessLogics.csproj">
+      <Project>{0992b929-6c68-4b29-a8a4-7ba66b922d50}</Project>
+      <Name>BusinessLogics</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DbModels\DbModels.csproj">
       <Project>{d16d7c69-3645-45ef-b916-3276f5a8679a}</Project>
       <Name>DbModels</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\KaspiDBStart\DB.csproj">
-      <Project>{315b7d8c-8426-4276-b17a-de1dacc54213}</Project>
-      <Name>DB</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
