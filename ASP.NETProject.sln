@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASP.NET start", "ASP.NET st
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogics", "BusinessLogics\BusinessLogics.csproj", "{0992B929-6C68-4B29-A8A4-7BA66B922D50}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainProjectWcfLibrary", "MainProjectWcfLibrary\MainProjectWcfLibrary.csproj", "{989210C7-AE37-48E7-9668-953FFE5A586B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{0992B929-6C68-4B29-A8A4-7BA66B922D50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0992B929-6C68-4B29-A8A4-7BA66B922D50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0992B929-6C68-4B29-A8A4-7BA66B922D50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{989210C7-AE37-48E7-9668-953FFE5A586B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{989210C7-AE37-48E7-9668-953FFE5A586B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{989210C7-AE37-48E7-9668-953FFE5A586B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{989210C7-AE37-48E7-9668-953FFE5A586B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
