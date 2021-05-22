@@ -11,10 +11,11 @@ namespace ASP.NET_start.Controllers
 {
     public class HomeController : Controller
     {
-        ProductServiceRef.ProjectServiceOf_ProductClient client = new ProjectServiceOf_ProductClient();
+        
 
         public ActionResult Index()
         {
+            ProductServiceRef.ProjectServiceOf_ProductClient client = new ProjectServiceOf_ProductClient();
             IEnumerable<Product> ProductsWithPhotos = client.GetAll();
             return View(ProductsWithPhotos);  
         }
