@@ -5,17 +5,17 @@ using System.Web;
 using System.Web.Mvc;
 using DbModels.Production;
 using BusinessLogics;
+using ASP.NET_start.ProductServiceRef;
 
 namespace ASP.NET_start.Controllers
 {
     public class HomeController : Controller
     {
-
-        ProductionUnitOfWork PUoW = new ProductionUnitOfWork();
+        ProductServiceRef.ProjectServiceOf_ProductClient client = new ProjectServiceOf_ProductClient();
 
         public ActionResult Index()
         {
-            IEnumerable<Product> ProductsWithPhotos = PUoW.Product.GetAllInInventory();
+            IEnumerable<Product> ProductsWithPhotos = client.GetAll();
             return View(ProductsWithPhotos);  
         }
         public ActionResult About()
