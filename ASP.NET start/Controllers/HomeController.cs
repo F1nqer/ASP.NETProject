@@ -16,7 +16,9 @@ namespace ASP.NET_start.Controllers
         public ActionResult Index()
         {
             ProductServiceRef.ProjectServiceOf_ProductClient client = new ProjectServiceOf_ProductClient();
-            IEnumerable<Product> ProductsWithPhotos = client.GetAll();
+            List<Product> ProductsWithPhotos = new List<Product>();
+            ProductsWithPhotos.Append(client.Get(351));
+            client.Close();
             return View(ProductsWithPhotos);  
         }
         public ActionResult About()
