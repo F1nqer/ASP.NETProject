@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:57255/ProductService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DbModels.Production" />
+  <xs:import schemaLocation="http://localhost:57255/ProductService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DbModels.DataContracts" />
   <xs:element name="GetAll">
     <xs:complexType>
       <xs:sequence />
@@ -9,7 +9,7 @@
   <xs:element name="GetAllResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DbModels.Production" minOccurs="0" name="GetAllResult" nillable="true" type="q1:ArrayOfProduct" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DbModels.DataContracts" minOccurs="0" name="GetAllResult" nillable="true" type="q1:ArrayOfProductContract" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -23,14 +23,14 @@
   <xs:element name="GetResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DbModels.Production" minOccurs="0" name="GetResult" nillable="true" type="q2:Product" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DbModels.DataContracts" minOccurs="0" name="GetResult" nillable="true" type="q2:ProductContract" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="Create">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DbModels.Production" minOccurs="0" name="item" nillable="true" type="q3:Product" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DbModels.DataContracts" minOccurs="0" name="item" nillable="true" type="q3:ProductContract" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -42,7 +42,7 @@
   <xs:element name="Update">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DbModels.Production" minOccurs="0" name="item" nillable="true" type="q4:Product" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DbModels.DataContracts" minOccurs="0" name="item" nillable="true" type="q4:ProductContract" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

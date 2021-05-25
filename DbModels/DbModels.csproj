@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataContracts\ProductContract.cs" />
     <Compile Include="Person\Address.cs" />
     <Compile Include="Person\AddressType.cs" />
     <Compile Include="Person\BusinessEntity.cs" />

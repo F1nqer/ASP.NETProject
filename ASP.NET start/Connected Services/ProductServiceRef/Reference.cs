@@ -12,96 +12,96 @@ namespace ASP.NET_start.ProductServiceRef {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ProductServiceRef.IProjectServiceOf_Product")]
-    public interface IProjectServiceOf_Product {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ProductServiceRef.IProjectServiceOf_ProductContract")]
+    public interface IProjectServiceOf_ProductContract {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProjectServiceOf_Product/GetAll", ReplyAction="http://tempuri.org/IProjectServiceOf_Product/GetAllResponse")]
-        DbModels.Production.Product[] GetAll();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProjectServiceOf_ProductContract/GetAll", ReplyAction="http://tempuri.org/IProjectServiceOf_ProductContract/GetAllResponse")]
+        DbModels.DataContracts.ProductContract[] GetAll();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProjectServiceOf_Product/GetAll", ReplyAction="http://tempuri.org/IProjectServiceOf_Product/GetAllResponse")]
-        System.Threading.Tasks.Task<DbModels.Production.Product[]> GetAllAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProjectServiceOf_ProductContract/GetAll", ReplyAction="http://tempuri.org/IProjectServiceOf_ProductContract/GetAllResponse")]
+        System.Threading.Tasks.Task<DbModels.DataContracts.ProductContract[]> GetAllAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProjectServiceOf_Product/Get", ReplyAction="http://tempuri.org/IProjectServiceOf_Product/GetResponse")]
-        DbModels.Production.Product Get(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProjectServiceOf_ProductContract/Get", ReplyAction="http://tempuri.org/IProjectServiceOf_ProductContract/GetResponse")]
+        DbModels.DataContracts.ProductContract Get(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProjectServiceOf_Product/Get", ReplyAction="http://tempuri.org/IProjectServiceOf_Product/GetResponse")]
-        System.Threading.Tasks.Task<DbModels.Production.Product> GetAsync(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProjectServiceOf_ProductContract/Get", ReplyAction="http://tempuri.org/IProjectServiceOf_ProductContract/GetResponse")]
+        System.Threading.Tasks.Task<DbModels.DataContracts.ProductContract> GetAsync(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProjectServiceOf_Product/Create", ReplyAction="http://tempuri.org/IProjectServiceOf_Product/CreateResponse")]
-        void Create(DbModels.Production.Product item);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProjectServiceOf_ProductContract/Create", ReplyAction="http://tempuri.org/IProjectServiceOf_ProductContract/CreateResponse")]
+        void Create(DbModels.DataContracts.ProductContract item);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProjectServiceOf_Product/Create", ReplyAction="http://tempuri.org/IProjectServiceOf_Product/CreateResponse")]
-        System.Threading.Tasks.Task CreateAsync(DbModels.Production.Product item);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProjectServiceOf_ProductContract/Create", ReplyAction="http://tempuri.org/IProjectServiceOf_ProductContract/CreateResponse")]
+        System.Threading.Tasks.Task CreateAsync(DbModels.DataContracts.ProductContract item);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProjectServiceOf_Product/Update", ReplyAction="http://tempuri.org/IProjectServiceOf_Product/UpdateResponse")]
-        void Update(DbModels.Production.Product item);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProjectServiceOf_ProductContract/Update", ReplyAction="http://tempuri.org/IProjectServiceOf_ProductContract/UpdateResponse")]
+        void Update(DbModels.DataContracts.ProductContract item);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProjectServiceOf_Product/Update", ReplyAction="http://tempuri.org/IProjectServiceOf_Product/UpdateResponse")]
-        System.Threading.Tasks.Task UpdateAsync(DbModels.Production.Product item);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProjectServiceOf_ProductContract/Update", ReplyAction="http://tempuri.org/IProjectServiceOf_ProductContract/UpdateResponse")]
+        System.Threading.Tasks.Task UpdateAsync(DbModels.DataContracts.ProductContract item);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProjectServiceOf_Product/Delete", ReplyAction="http://tempuri.org/IProjectServiceOf_Product/DeleteResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProjectServiceOf_ProductContract/Delete", ReplyAction="http://tempuri.org/IProjectServiceOf_ProductContract/DeleteResponse")]
         void Delete(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProjectServiceOf_Product/Delete", ReplyAction="http://tempuri.org/IProjectServiceOf_Product/DeleteResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProjectServiceOf_ProductContract/Delete", ReplyAction="http://tempuri.org/IProjectServiceOf_ProductContract/DeleteResponse")]
         System.Threading.Tasks.Task DeleteAsync(int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IProjectServiceOf_ProductChannel : ASP.NET_start.ProductServiceRef.IProjectServiceOf_Product, System.ServiceModel.IClientChannel {
+    public interface IProjectServiceOf_ProductContractChannel : ASP.NET_start.ProductServiceRef.IProjectServiceOf_ProductContract, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ProjectServiceOf_ProductClient : System.ServiceModel.ClientBase<ASP.NET_start.ProductServiceRef.IProjectServiceOf_Product>, ASP.NET_start.ProductServiceRef.IProjectServiceOf_Product {
+    public partial class ProjectServiceOf_ProductContractClient : System.ServiceModel.ClientBase<ASP.NET_start.ProductServiceRef.IProjectServiceOf_ProductContract>, ASP.NET_start.ProductServiceRef.IProjectServiceOf_ProductContract {
         
-        public ProjectServiceOf_ProductClient() {
+        public ProjectServiceOf_ProductContractClient() {
         }
         
-        public ProjectServiceOf_ProductClient(string endpointConfigurationName) : 
+        public ProjectServiceOf_ProductContractClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public ProjectServiceOf_ProductClient(string endpointConfigurationName, string remoteAddress) : 
+        public ProjectServiceOf_ProductContractClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ProjectServiceOf_ProductClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public ProjectServiceOf_ProductContractClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ProjectServiceOf_ProductClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public ProjectServiceOf_ProductContractClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
-        public DbModels.Production.Product[] GetAll() {
+        public DbModels.DataContracts.ProductContract[] GetAll() {
             return base.Channel.GetAll();
         }
         
-        public System.Threading.Tasks.Task<DbModels.Production.Product[]> GetAllAsync() {
+        public System.Threading.Tasks.Task<DbModels.DataContracts.ProductContract[]> GetAllAsync() {
             return base.Channel.GetAllAsync();
         }
         
-        public DbModels.Production.Product Get(int id) {
+        public DbModels.DataContracts.ProductContract Get(int id) {
             return base.Channel.Get(id);
         }
         
-        public System.Threading.Tasks.Task<DbModels.Production.Product> GetAsync(int id) {
+        public System.Threading.Tasks.Task<DbModels.DataContracts.ProductContract> GetAsync(int id) {
             return base.Channel.GetAsync(id);
         }
         
-        public void Create(DbModels.Production.Product item) {
+        public void Create(DbModels.DataContracts.ProductContract item) {
             base.Channel.Create(item);
         }
         
-        public System.Threading.Tasks.Task CreateAsync(DbModels.Production.Product item) {
+        public System.Threading.Tasks.Task CreateAsync(DbModels.DataContracts.ProductContract item) {
             return base.Channel.CreateAsync(item);
         }
         
-        public void Update(DbModels.Production.Product item) {
+        public void Update(DbModels.DataContracts.ProductContract item) {
             base.Channel.Update(item);
         }
         
-        public System.Threading.Tasks.Task UpdateAsync(DbModels.Production.Product item) {
+        public System.Threading.Tasks.Task UpdateAsync(DbModels.DataContracts.ProductContract item) {
             return base.Channel.UpdateAsync(item);
         }
         

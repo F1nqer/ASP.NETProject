@@ -2,20 +2,24 @@ using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
+using System.Runtime.Serialization;
+
 
 namespace DbModels.Production
 {
+    [DataContract]
     public partial class Production : DbContext
     {
         public Production()
             : base("name=Production")
         {
         }
-
+       
         public virtual DbSet<BillOfMaterials> BillOfMaterials { get; set; }
         public virtual DbSet<Culture> Culture { get; set; }
         public virtual DbSet<Illustration> Illustration { get; set; }
         public virtual DbSet<Location> Location { get; set; }
+        [DataMember]
         public virtual DbSet<Product> Product { get; set; }
         public virtual DbSet<ProductCategory> ProductCategory { get; set; }
         public virtual DbSet<ProductCostHistory> ProductCostHistory { get; set; }
@@ -25,7 +29,9 @@ namespace DbModels.Production
         public virtual DbSet<ProductModel> ProductModel { get; set; }
         public virtual DbSet<ProductModelIllustration> ProductModelIllustration { get; set; }
         public virtual DbSet<ProductModelProductDescriptionCulture> ProductModelProductDescriptionCulture { get; set; }
+        [DataMember]
         public virtual DbSet<ProductPhoto> ProductPhoto { get; set; }
+        [DataMember]
         public virtual DbSet<ProductProductPhoto> ProductProductPhoto { get; set; }
         public virtual DbSet<ProductReview> ProductReview { get; set; }
         public virtual DbSet<ProductSubcategory> ProductSubcategory { get; set; }

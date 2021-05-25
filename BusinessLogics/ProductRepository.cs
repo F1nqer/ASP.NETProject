@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
+using System.ServiceModel.Dispatcher;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,7 +21,12 @@ namespace BusinessLogics
 
         public IEnumerable<Product> GetAll()
         {
-            return db.Product.Include(p => p.ProductProductPhoto);
+            return db.Product;
+        }
+
+        public IEnumerable<Product> GetAllWithPhotos()
+        {
+            return db.Product.Include(p => p.ProductProductPhoto).Include("ProductPhoto");
         }
 
         public IEnumerable<Product> GetAllInInventory()

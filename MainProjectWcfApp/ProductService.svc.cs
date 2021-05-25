@@ -6,37 +6,38 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using DbModels.DataContracts;
 
 namespace MainProjectWcfApp
 {
-    public class ProductService : IProjectService<Product>
+    public class ProductService : IProjectService<ProductContract>
     {
         private ProductionUnitOfWork db = new ProductionUnitOfWork();
 
-        public IEnumerable<Product> GetAll()
+        public IEnumerable<ProductContract> GetAll()
         {
-            return db.Product.GetAll();
+            return Transleters.ProductListToContract(db.Product.GetAll());
         }
 
-        public IEnumerable<Product> GetAllInInventory()
+        public IEnumerable<ProductContract> GetAllInInventory()
         {
-            return db.Product.GetAllInInventory();
+            return Transleters.ProductListToContract(db.Product.GetAllInInventory());
         }
 
-
-        public Product Get(int id)
+        public ProductContract Get(int id)
         {
-            return db.Product.Get(id);
+            Product p = db.Product.Get(id);
+            return Transleters.ProductToContract(p);
         }
 
-        public void Create(Product product)
+        public void Create(ProductContract product)
         {
-            db.Product.Create(product);
+            db.Product.Create(Transleters.ContractToProduct(product));
         }
 
-        public void Update(Product product)
+        public void Update(ProductContract product)
         {
-            db.Product.Update(product);
+            db.Product.Update(Transleters.ContractToProduct(product));
         }
 
         public void Delete(int id)

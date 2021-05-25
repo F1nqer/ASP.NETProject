@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using DbModels.Production;
 using BusinessLogics;
 using ASP.NET_start.ProductServiceRef;
+using DbModels.DataContracts;
 
 namespace ASP.NET_start.Controllers
 {
@@ -15,9 +16,8 @@ namespace ASP.NET_start.Controllers
 
         public ActionResult Index()
         {
-            ProductServiceRef.ProjectServiceOf_ProductClient client = new ProjectServiceOf_ProductClient();
-            List<Product> ProductsWithPhotos = new List<Product>();
-            ProductsWithPhotos.Append(client.Get(351));
+            ProductServiceRef.ProjectServiceOf_ProductContractClient client = new ProjectServiceOf_ProductContractClient();
+            IEnumerable<ProductContract> ProductsWithPhotos = client.GetAll();
             client.Close();
             return View(ProductsWithPhotos);  
         }
