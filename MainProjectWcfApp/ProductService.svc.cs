@@ -14,12 +14,12 @@ namespace MainProjectWcfApp
     {
         private ProductionUnitOfWork db = new ProductionUnitOfWork();
 
-        public IEnumerable<ProductContract> GetAll()
+        public List<ProductContract> GetAll()
         {
             return Transleters.ProductListToContract(db.Product.GetAll());
         }
 
-        public IEnumerable<ProductContract> GetAllInInventory()
+        public List<ProductContract> GetAllInInventory()
         {
             return Transleters.ProductListToContract(db.Product.GetAllInInventory());
         }

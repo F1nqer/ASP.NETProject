@@ -12,7 +12,7 @@ namespace MainProjectWcfApp
     public interface IProjectService<TEntity>
     {
         [OperationContract] 
-        IEnumerable<TEntity> GetAll();
+        List<TEntity> GetAll();
         [OperationContract]
         TEntity Get(int id);
         [OperationContract]

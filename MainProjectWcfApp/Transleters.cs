@@ -30,9 +30,9 @@ namespace MainProjectWcfApp
             PContract.ThumbNailPhoto = PModel.ProductProductPhoto.First().ProductPhoto.ThumbNailPhoto;
             return PContract;
         }
-        public static IEnumerable<ProductContract> ProductListToContract(IEnumerable<Product> PList)
+        public static List<ProductContract> ProductListToContract(IEnumerable<Product> PList)
         {
-            IEnumerable<ProductContract> PContractList = new List<ProductContract>();
+            List<ProductContract> PContractList = new List<ProductContract>();
             foreach (Product PModel in PList)
             {
                 ProductContract PContract = new ProductContract();
@@ -53,7 +53,7 @@ namespace MainProjectWcfApp
                 PContract.Weight = PModel.Weight;
                 PContract.LargePhoto = PModel.ProductProductPhoto.First().ProductPhoto.LargePhoto;
                 PContract.ThumbNailPhoto = PModel.ProductProductPhoto.First().ProductPhoto.ThumbNailPhoto;
-                PContractList.Append(PContract);
+                PContractList.Add(PContract);
             }
             return PContractList;
         }
