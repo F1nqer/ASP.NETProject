@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using DbModels.Production;
 using BusinessLogics;
 using ASP.NET_start.ProductServiceRef;
-using DbModels.DataContracts;
 
 namespace ASP.NET_start.Controllers
 {

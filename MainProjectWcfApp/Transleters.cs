@@ -1,14 +1,15 @@
-﻿using DbModels.Production;
+﻿using DbModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using DbModels.DataContracts;
+using WcfContracts.DataContracts;
+
 namespace MainProjectWcfApp
 {
     public static class Transleters
     {
-        public static ProductContract ProductToContract( Product PModel)
+        public static ProductContract ProductToContract(Product PModel)
         {
             ProductContract PContract = new ProductContract();
             PContract.Class = PModel.Class;

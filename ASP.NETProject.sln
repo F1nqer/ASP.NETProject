@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogics", "BusinessL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainProjectWcfApp", "MainProjectWcfApp\MainProjectWcfApp.csproj", "{B4E1DE4B-BF42-4837-A329-9390F4FC4430}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfContracts", "WcfContracts\WcfContracts.csproj", "{6D234ADA-9AF9-4BFE-A8B4-D281CCAC268C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,10 @@ Global
 		{B4E1DE4B-BF42-4837-A329-9390F4FC4430}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4E1DE4B-BF42-4837-A329-9390F4FC4430}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4E1DE4B-BF42-4837-A329-9390F4FC4430}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D234ADA-9AF9-4BFE-A8B4-D281CCAC268C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D234ADA-9AF9-4BFE-A8B4-D281CCAC268C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D234ADA-9AF9-4BFE-A8B4-D281CCAC268C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D234ADA-9AF9-4BFE-A8B4-D281CCAC268C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

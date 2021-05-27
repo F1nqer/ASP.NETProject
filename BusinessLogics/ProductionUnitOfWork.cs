@@ -1,10 +1,10 @@
-﻿using DbModels.Production;
+﻿using DbModels;
 using System;
 namespace BusinessLogics
 {
     public class ProductionUnitOfWork : IDisposable
     {
-        private Production db = new Production();
+        private AdventureWorks db = new AdventureWorks();
         private ProductRepository productRepository;
         private ProductProductPhotoRepository prodprodphotoRepository;
         private ProductPhotoRepository prodphotoRepository;

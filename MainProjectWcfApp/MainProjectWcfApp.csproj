@@ -73,7 +73,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Transleters.cs" />
-    <Compile Include="IProjectService.cs" />
     <Compile Include="ProductService.svc.cs">
       <DependentUpon>ProductService.svc</DependentUpon>
     </Compile>
@@ -99,6 +98,10 @@
     <ProjectReference Include="..\DbModels\DbModels.csproj">
       <Project>{D16D7C69-3645-45EF-B916-3276F5A8679A}</Project>
       <Name>DbModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WcfContracts\WcfContracts.csproj">
+      <Project>{6D234ADA-9AF9-4BFE-A8B4-D281CCAC268C}</Project>
+      <Name>WcfContracts</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

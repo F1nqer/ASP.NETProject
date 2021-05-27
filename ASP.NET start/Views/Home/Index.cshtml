@@ -1,4 +1,4 @@
-﻿@model IEnumerable<DbModels.DataContracts.ProductContract>
+﻿@model IEnumerable<ASP.NET_start.ProductServiceRef.ProductContract>
 @{
     ViewBag.Title = "Products store";
 }
@@ -14,7 +14,7 @@
         <td><p>@b.Name @b.ProductID</p></td>
     <td>@*
         @Html.Raw("<img style='width:120px; height:80px;' src=\"data:image/jpeg;base64,"
-                            + Convert.ToBase64String(c.ProductPhoto.LargePhoto) + "\" />")*@
+                            + Convert.ToBase64String(b.LargePhoto) + "\" />")*@
         <img src="data:image/jpeg;base64, @System.Convert.ToBase64String(b.LargePhoto)" />
     </td>
     </tr>

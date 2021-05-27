@@ -1,4 +1,4 @@
-﻿using DbModels.Production;
+﻿using DbModels;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -12,9 +12,9 @@ namespace BusinessLogics
 {
     public class ProductRepository : IRepository<Product>
     {
-        private Production db;
+        private AdventureWorks db;
 
-        public ProductRepository(Production context)
+        public ProductRepository(AdventureWorks context)
         {
             this.db = context;
         }

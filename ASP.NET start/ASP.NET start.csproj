@@ -140,6 +140,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Connected Services\ProductServiceRef\ASP.NET_start.ProductServiceRef.ProductContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\ProductServiceRef\ProductService.disco" />
     <None Include="Connected Services\ProductServiceRef\configuration91.svcinfo" />
     <None Include="Connected Services\ProductServiceRef\configuration.svcinfo" />
