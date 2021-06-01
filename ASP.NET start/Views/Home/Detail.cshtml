@@ -1,0 +1,16 @@
+﻿@model ASP.NET_start.ProductServiceRef.ProductContract
+@{
+    ViewBag.Title = "Детали";
+}
+
+<h2>Подробности про @Model.Name </h2>
+
+@Html.Raw("<img src=\"data:image/jpeg;base64," + Convert.ToBase64String(Model.LargePhoto) + "\" />")
+    @using (Html.BeginForm("AddToCart", "Cart"))
+    {
+        <input id="ProductID" name="ProductID" type="hidden" value=@Model.ProductID />
+        <input type="submit" value="Добавить в корзину" />
+    }
+
+<h3>Описание</h3>
+<p>@Model.Description</p>

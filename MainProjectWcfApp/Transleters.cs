@@ -29,6 +29,14 @@ namespace MainProjectWcfApp
             PContract.Weight = PModel.Weight;
             PContract.LargePhoto = PModel.ProductProductPhoto.First().ProductPhoto.LargePhoto;
             PContract.ThumbNailPhoto = PModel.ProductProductPhoto.First().ProductPhoto.ThumbNailPhoto;
+            if (PModel.ProductModel == null || PModel.ProductModel.ProductModelProductDescriptionCulture.Count() < 1)
+            {
+                PContract.Description = "null";
+            }
+            else
+            {
+                PContract.Description = PModel.ProductModel.ProductModelProductDescriptionCulture.First().ProductDescription.Description;
+            }
             return PContract;
         }
         public static List<ProductContract> ProductListToContract(IEnumerable<Product> PList)
@@ -54,6 +62,14 @@ namespace MainProjectWcfApp
                 PContract.Weight = PModel.Weight;
                 PContract.LargePhoto = PModel.ProductProductPhoto.First().ProductPhoto.LargePhoto;
                 PContract.ThumbNailPhoto = PModel.ProductProductPhoto.First().ProductPhoto.ThumbNailPhoto;
+                if (PModel.ProductModel == null || PModel.ProductModel.ProductModelProductDescriptionCulture.Count() < 1)
+                {
+                    PContract.Description = "null";
+                }
+                else
+                {
+                    PContract.Description = PModel.ProductModel.ProductModelProductDescriptionCulture.First().ProductDescription.Description;
+                }
                 PContractList.Add(PContract);
             }
             return PContractList;

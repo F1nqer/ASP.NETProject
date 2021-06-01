@@ -27,6 +27,15 @@ namespace ASP.NET_start.Controllers
             return View();
         }
 
+        public ActionResult Detail(int ProductID)
+        {
+            ProjectServiceOf_ProductContractClient client = new ProjectServiceOf_ProductContractClient();
+            ProductContract product = client.Get(ProductID);
+
+            client.Close();
+            return View(product);
+        }
+
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

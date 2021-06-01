@@ -32,6 +32,9 @@ namespace ASP.NET_start.ProductServiceRef {
         private int DaysToManufactureField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private byte[] LargePhotoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -118,6 +121,19 @@ namespace ASP.NET_start.ProductServiceRef {
                 if ((this.DaysToManufactureField.Equals(value) != true)) {
                     this.DaysToManufactureField = value;
                     this.RaisePropertyChanged("DaysToManufacture");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
                 }
             }
         }

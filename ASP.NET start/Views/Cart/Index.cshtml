@@ -1,0 +1,46 @@
+﻿@model ASP.NET_start.Models.CartIndexViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Корзина</h2>
+<p>Готовы оформить заказ?</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Количество</th>
+            <th>Продукт</th>
+            <th class="text-right">Цена</th>
+            <th class="text-right">Общая цена</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model.Cart.Lines)
+        {
+        <tr>
+            <td class="text-center">@p.Quantity</td>
+            <td class="text-left">@p.Product.Name </td>
+            <td class="text-right">@p.Product.StandardCost</td>
+            <td class="text-right">
+                @((p.Quantity * p.Product.StandardCost))
+            </td>
+            <td>
+                @using (Html.BeginForm("RemoveFromCart", "Cart"))
+                {
+                    <input id="ProductID" name="ProductID" type="hidden" value=@p.Product.ProductID />
+                    <input type="submit" value="Удалить" />
+                }
+            </td>
+        </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3" align="right">Итоговая сумма:</td>
+            <td align="right">
+                @Model.Cart.ComputeTotalValue().ToString()
+            </td>
+        </tr>
+    </tfoot>
+</table>

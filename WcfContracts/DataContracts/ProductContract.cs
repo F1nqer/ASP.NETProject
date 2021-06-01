@@ -59,5 +59,7 @@ namespace WcfContracts.DataContracts
 
         [DataMember]
         public byte[] LargePhoto { get; set; }
+        [DataMember]
+        public string Description { get; set; }
     }
 }
