@@ -314,6 +314,160 @@ namespace ASP.NET_start.ProductServiceRef {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProductPageContract", Namespace="http://schemas.datacontract.org/2004/07/WcfContracts.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class ProductPageContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ASP.NET_start.ProductServiceRef.PageInfo PageInfoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ASP.NET_start.ProductServiceRef.ProductContract[] ProductsField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ASP.NET_start.ProductServiceRef.PageInfo PageInfo {
+            get {
+                return this.PageInfoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PageInfoField, value) != true)) {
+                    this.PageInfoField = value;
+                    this.RaisePropertyChanged("PageInfo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ASP.NET_start.ProductServiceRef.ProductContract[] Products {
+            get {
+                return this.ProductsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductsField, value) != true)) {
+                    this.ProductsField = value;
+                    this.RaisePropertyChanged("Products");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PageInfo", Namespace="http://schemas.datacontract.org/2004/07/WcfContracts.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class PageInfo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CurrentPageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ItemsPerPageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TotalItemsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TotalPagesField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CurrentPage {
+            get {
+                return this.CurrentPageField;
+            }
+            set {
+                if ((this.CurrentPageField.Equals(value) != true)) {
+                    this.CurrentPageField = value;
+                    this.RaisePropertyChanged("CurrentPage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ItemsPerPage {
+            get {
+                return this.ItemsPerPageField;
+            }
+            set {
+                if ((this.ItemsPerPageField.Equals(value) != true)) {
+                    this.ItemsPerPageField = value;
+                    this.RaisePropertyChanged("ItemsPerPage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TotalItems {
+            get {
+                return this.TotalItemsField;
+            }
+            set {
+                if ((this.TotalItemsField.Equals(value) != true)) {
+                    this.TotalItemsField = value;
+                    this.RaisePropertyChanged("TotalItems");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TotalPages {
+            get {
+                return this.TotalPagesField;
+            }
+            set {
+                if ((this.TotalPagesField.Equals(value) != true)) {
+                    this.TotalPagesField = value;
+                    this.RaisePropertyChanged("TotalPages");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ProductServiceRef.IProjectServiceOf_ProductContract")]
     public interface IProjectServiceOf_ProductContract {
@@ -347,6 +501,12 @@ namespace ASP.NET_start.ProductServiceRef {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProjectServiceOf_ProductContract/Delete", ReplyAction="http://tempuri.org/IProjectServiceOf_ProductContract/DeleteResponse")]
         System.Threading.Tasks.Task DeleteAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProjectServiceOf_ProductContract/GetPage", ReplyAction="http://tempuri.org/IProjectServiceOf_ProductContract/GetPageResponse")]
+        ASP.NET_start.ProductServiceRef.ProductPageContract GetPage(int page);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProjectServiceOf_ProductContract/GetPage", ReplyAction="http://tempuri.org/IProjectServiceOf_ProductContract/GetPageResponse")]
+        System.Threading.Tasks.Task<ASP.NET_start.ProductServiceRef.ProductPageContract> GetPageAsync(int page);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -414,6 +574,14 @@ namespace ASP.NET_start.ProductServiceRef {
         
         public System.Threading.Tasks.Task DeleteAsync(int id) {
             return base.Channel.DeleteAsync(id);
+        }
+        
+        public ASP.NET_start.ProductServiceRef.ProductPageContract GetPage(int page) {
+            return base.Channel.GetPage(page);
+        }
+        
+        public System.Threading.Tasks.Task<ASP.NET_start.ProductServiceRef.ProductPageContract> GetPageAsync(int page) {
+            return base.Channel.GetPageAsync(page);
         }
     }
 }

@@ -5,19 +5,20 @@ using System.Web;
 using System.Web.Mvc;
 using BusinessLogics;
 using ASP.NET_start.ProductServiceRef;
+using DbModels;
 
 namespace ASP.NET_start.Controllers
 {
     public class HomeController : Controller
     {
-        
 
-        public ActionResult Index()
+
+        public ActionResult Index(int page = 1)
         {
-            ProductServiceRef.ProjectServiceOf_ProductContractClient client = new ProjectServiceOf_ProductContractClient();
-            IEnumerable<ProductContract> ProductsWithPhotos = client.GetAll();
+            ProjectServiceOf_ProductContractClient client = new ProjectServiceOf_ProductContractClient();
+            ProductPageContract productPage = client.GetPage(page);
             client.Close();
-            return View(ProductsWithPhotos);  
+            return View(productPage);
         }
         public ActionResult About()
         {

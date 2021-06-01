@@ -63,4 +63,18 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetPage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="page" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WcfContracts.DataContracts" minOccurs="0" name="GetPageResult" nillable="true" type="q5:ProductPageContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

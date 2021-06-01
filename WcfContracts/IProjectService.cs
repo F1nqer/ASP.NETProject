@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using WcfContracts.DataContracts;
 
 namespace WcfContracts
 {
@@ -17,11 +18,12 @@ namespace WcfContracts
         TEntity Get(int id);
         [OperationContract]
         void Create(TEntity item);
+
         [OperationContract]
         void Update(TEntity item);
         [OperationContract]
         void Delete(int id);
-
-        // TODO: Добавьте здесь операции служб
+        [OperationContract]
+        ProductPageContract GetPage(int page = 1);
     }
 }

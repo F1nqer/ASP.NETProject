@@ -1,22 +1,59 @@
-﻿@model IEnumerable<ASP.NET_start.ProductServiceRef.ProductContract>
+﻿@model ASP.NET_start.ProductServiceRef.ProductPageContract
+@using ASP.NET_start.HTMLHelpers 
 @{
-    ViewBag.Title = "Products store";
+    ViewBag.Title = "Home Page";
 }
 
-<div class="row">
-    <tr>
-        <td>Название</td>
-        <td>Фотография</td>
-    </tr>
-    @foreach (var b in Model)
-    {
-    <tr>
-        <td><p>@b.Name @b.ProductID</p></td>
-    <td>@*
-        @Html.Raw("<img style='width:120px; height:80px;' src=\"data:image/jpeg;base64,"
-                            + Convert.ToBase64String(b.LargePhoto) + "\" />")*@
-        <img src="data:image/jpeg;base64, @System.Convert.ToBase64String(b.LargePhoto)" />
-    </td>
-    </tr>
-    }
-</div>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Магазинчик</title>
+</head>
+<body>
+    <div>
+        <h3>Проверка</h3>
+        <table>
+            <tr>
+                <th>Продукт</th>
+                <th>Картинка</th>
+                <th>Цена</th>
+                <th></th>
+                <th>П</th>
+            </tr>
+            @foreach (var p in Model.Products)
+            {
+                <tr>
+                    <td>
+                        <p>@p.Name</p>
+                    </td>
+                    <td>
+                        <p>@Html.Raw("<img style='width:100px; height:60px;' src=\"data:image/jpeg;base64," + Convert.ToBase64String(p.ThumbNailPhoto) + "\" />")</p>
+                    </td>
+                    <td>
+                        <p>@p.StandardCost</p>
+                    </td>
+                    <td>
+                        @using (Html.BeginForm("AddToCart", "Cart"))
+                        {
+                            <input id="ProductID" name="ProductID" type="hidden" value=@p.ProductID />
+                            <input type="submit" value="Добавить в корзину" />
+                        }
+                    </td>
+                    <td>
+                        @using (Html.BeginForm("Index", "ProductDetail"))
+                        {
+                            <input id="ProductID" name="ProductID" type="hidden" value=@p.ProductID />
+                            <input type="submit" value="Подробнее" />
+                        }
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="pager">
+        @Html.PageLinks(Model.PageInfo, x => Url.Action("Index", new { page = x }))
+    </div>
+</body>
+</html>

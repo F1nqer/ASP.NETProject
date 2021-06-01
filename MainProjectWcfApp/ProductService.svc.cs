@@ -17,12 +17,29 @@ namespace MainProjectWcfApp
 
         public List<ProductContract> GetAll()
         {
-            return Transleters.ProductListToContract(db.Product.GetAll());
+            return Transleters.ProductListToContract(db.Product.GetAllInInventory());
         }
 
-        public List<ProductContract> GetAllInInventory()
+        public ProductPageContract GetPage(int page = 1)
         {
-            return Transleters.ProductListToContract(db.Product.GetAllInInventory());
+            int PageSize = 10;
+            int count = db.Product.GetAll().Where(p => p.ProductInventory.Sum(q => q.Quantity) > 0 && p.StandardCost != 0).Count();
+            ProductPageContract mainPage = new ProductPageContract
+            {
+                Products = Transleters.ProductListToContract(db.Product.GetAll()
+                .Where(p => p.ProductInventory.Sum(q => q.Quantity) > 0 && p.StandardCost != 0)
+                .OrderBy(p => p.ProductID)
+                .Skip((page - 1) * PageSize)
+                .Take(PageSize)),
+                PageInfo = new PageInfo
+                {
+                    CurrentPage = page,
+                    ItemsPerPage = PageSize,
+                    TotalItems = count,
+                    TotalPages = (int)Math.Ceiling((decimal)count / PageSize)
+                }
+            };
+            return mainPage;
         }
 
         public ProductContract Get(int id)

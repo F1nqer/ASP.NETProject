@@ -43,7 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataContracts\PageInfo.cs" />
     <Compile Include="DataContracts\ProductContract.cs" />
+    <Compile Include="DataContracts\ProductPageContract.cs" />
     <Compile Include="IProjectService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

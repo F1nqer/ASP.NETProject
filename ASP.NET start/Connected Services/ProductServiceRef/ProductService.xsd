@@ -28,4 +28,20 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ProductContract" nillable="true" type="tns:ProductContract" />
+  <xs:complexType name="ProductPageContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PageInfo" nillable="true" type="tns:PageInfo" />
+      <xs:element minOccurs="0" name="Products" nillable="true" type="tns:ArrayOfProductContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductPageContract" nillable="true" type="tns:ProductPageContract" />
+  <xs:complexType name="PageInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CurrentPage" type="xs:int" />
+      <xs:element minOccurs="0" name="ItemsPerPage" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalItems" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalPages" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PageInfo" nillable="true" type="tns:PageInfo" />
 </xs:schema>
