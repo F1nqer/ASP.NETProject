@@ -1,4 +1,4 @@
-﻿using DbModels;
+﻿using DbModels.ContextModels;
 using System;
 namespace BusinessLogics
 {
@@ -8,6 +8,10 @@ namespace BusinessLogics
         private ProductRepository productRepository;
         private ProductProductPhotoRepository prodprodphotoRepository;
         private ProductPhotoRepository prodphotoRepository;
+        private PurchaseOrderHeaderRepository orderheaderRepository;
+        private SalesPersonRepository salespersonRepository;
+        private PurchaseOrderDetailRepository orderdetailRepository;
+        private TerritoryRepository salesterritoryRepository;
 
 
         public ProductRepository Product
@@ -38,6 +42,45 @@ namespace BusinessLogics
                 return prodphotoRepository;
             }
         }
+
+        public PurchaseOrderHeaderRepository OrderHeader
+        {
+            get
+            {
+                if (orderheaderRepository == null)
+                    orderheaderRepository = new PurchaseOrderHeaderRepository(db);
+                return orderheaderRepository;
+            }
+        }
+        public PurchaseOrderDetailRepository OrderDetail
+        {
+            get
+            {
+                if (orderdetailRepository == null)
+                    orderdetailRepository = new PurchaseOrderDetailRepository(db);
+                return orderdetailRepository;
+            }
+        }
+        public SalesPersonRepository SalesPerson
+        {
+            get
+            {
+                if (salespersonRepository == null)
+                    salespersonRepository = new SalesPersonRepository(db);
+                return salespersonRepository;
+            }
+        }
+        public TerritoryRepository SalesTerritory
+        {
+            get
+            {
+                if (salesterritoryRepository == null)
+                    salesterritoryRepository = new TerritoryRepository(db);
+                return salesterritoryRepository;
+            }
+        }
+
+
 
         public void Save()
         {

@@ -43,11 +43,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataContracts\CartLine.cs" />
     <Compile Include="DataContracts\PageInfo.cs" />
     <Compile Include="DataContracts\ProductContract.cs" />
     <Compile Include="DataContracts\ProductPageContract.cs" />
+    <Compile Include="DataContracts\PurchaseOrderContract.cs" />
+    <Compile Include="DataContracts\TerritoryContract.cs" />
     <Compile Include="IProjectService.cs" />
+    <Compile Include="IPurchaseService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Transleters.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLogics\BusinessLogics.csproj">
+      <Project>{0992B929-6C68-4B29-A8A4-7BA66B922D50}</Project>
+      <Name>BusinessLogics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DbModels\DbModels.csproj">
+      <Project>{D16D7C69-3645-45EF-B916-3276F5A8679A}</Project>
+      <Name>DbModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

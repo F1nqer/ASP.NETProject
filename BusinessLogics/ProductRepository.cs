@@ -1,4 +1,4 @@
-﻿using DbModels;
+﻿using DbModels.ContextModels;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;

@@ -55,6 +55,10 @@
     <Compile Include="ProductRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProductionUnitOfWork.cs" />
+    <Compile Include="PurchaseOrderDetailRepository.cs" />
+    <Compile Include="PurchaseOrderHeaderRepository.cs" />
+    <Compile Include="SalesPersonRepository.cs" />
+    <Compile Include="TerritoryRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DbModels\DbModels.csproj">
