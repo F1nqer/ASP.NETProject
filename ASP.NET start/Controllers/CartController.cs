@@ -27,7 +27,7 @@ namespace ASP.NET_start.Controllers
             {
                 try
                 {
-                    GetCart().Adding(product, 1);
+                    GetCart().Adding(ServiceDataTransletors.PurchaseProductToProductProduct(product), 1);
                 }
                 catch
                 {
@@ -51,6 +51,8 @@ namespace ASP.NET_start.Controllers
             client.Close();
             return RedirectToAction("Index");
         }
+
+
 
         public Cart GetCart()
         {

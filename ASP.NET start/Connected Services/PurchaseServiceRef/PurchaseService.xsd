@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WcfContracts.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WcfContracts.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfPurchaseOrderContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PurchaseOrderContract" nillable="true" type="tns:PurchaseOrderContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPurchaseOrderContract" nillable="true" type="tns:ArrayOfPurchaseOrderContract" />
+  <xs:complexType name="PurchaseOrderContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="EmployeeID" type="xs:int" />
+      <xs:element minOccurs="0" name="ModifiedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OrderProducts" nillable="true" type="tns:ArrayOfCartLine" />
+      <xs:element minOccurs="0" name="Status" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="SubTotal" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TerritoryID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PurchaseOrderContract" nillable="true" type="tns:PurchaseOrderContract" />
+  <xs:complexType name="ArrayOfCartLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CartLine" nillable="true" type="tns:CartLine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCartLine" nillable="true" type="tns:ArrayOfCartLine" />
+  <xs:complexType name="CartLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:ProductContract" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CartLine" nillable="true" type="tns:CartLine" />
+  <xs:complexType name="ProductContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Class" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Color" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DaysToManufacture" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LargePhoto" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="ListPrice" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ModifiedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductID" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductLine" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductModelID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SafetyStockLevel" type="xs:short" />
+      <xs:element minOccurs="0" name="Size" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StandardCost" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Style" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ThumbNailPhoto" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="Weight" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductContract" nillable="true" type="tns:ProductContract" />
+  <xs:complexType name="ArrayOfTerritoryContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TerritoryContract" nillable="true" type="tns:TerritoryContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTerritoryContract" nillable="true" type="tns:ArrayOfTerritoryContract" />
+  <xs:complexType name="TerritoryContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CountryRegionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Group" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TerritoryID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TerritoryContract" nillable="true" type="tns:TerritoryContract" />
+</xs:schema>

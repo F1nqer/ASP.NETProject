@@ -1,4 +1,5 @@
 ﻿using ASP.NET_start.ProductServiceRef;
+using ASP.NET_start.PurchaseServiceRef;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace ASP.NET_start.Models
     public class Cart
     {
         private List<CartLine> Carting = new List<CartLine>();
-        public void Adding(ProductContract product, int quantity)
+        public void Adding(PurchaseServiceRef.ProductContract product, int quantity)
         {
             CartLine cartline = Carting
                 .Where(pi => pi.Product.ProductID == product.ProductID)
@@ -24,7 +25,7 @@ namespace ASP.NET_start.Models
                 cartline.Quantity += 1;
             }
         }
-        public void Deleting(ProductContract product)
+        public void Deleting(ProductServiceRef.ProductContract product)
         {
             Carting.RemoveAll(l => l.Product.ProductID == product.ProductID);
         }
@@ -36,10 +37,9 @@ namespace ASP.NET_start.Models
         {
             get { return Carting; }
         }
-    }
-    public class CartLine
-    {
-        public ProductContract Product { get; set; }
-        public int Quantity { get; set; }
+        public void Clear()
+        {
+            Carting.Clear();
+        }
     }
 }

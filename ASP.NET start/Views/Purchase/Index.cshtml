@@ -1,0 +1,20 @@
+﻿@model ASP.NET_start.PurchaseServiceRef.PurchaseOrderContract
+@{
+    ViewBag.Title = "Оформление заказа";
+}
+
+<h2>Оформление заказа</h2>
+<p>Вы собираетесь купить следующие товары:</p>
+@foreach (var i in Model.OrderProducts)
+{
+    <p>@i.Product.Name @i.Quantity экзмепляра за @(i.Quantity*i.Product.StandardCost)</p>
+    
+}
+@using (Html.BeginForm("Purchasing", "Purchase"))
+{
+    <h3>Выберите территорию:</h3>
+    <div>@Html.DropDownListFor(model => model.TerritoryID, ViewBag.terra as SelectList)</div>
+    <p align="center">
+        <input class="actionButtons" type="submit" value="Подтвердить заказ" />
+    </p>
+}

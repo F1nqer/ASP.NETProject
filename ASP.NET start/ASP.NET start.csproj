@@ -133,14 +133,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\PurchaseServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PurchaseController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="HTMLHelpers\PageHelpers.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\CartIndexViewModel.cs" />
+    <Compile Include="Models\ServiceDataTransletors.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +161,19 @@
     <None Include="Connected Services\ProductServiceRef\configuration91.svcinfo" />
     <None Include="Connected Services\ProductServiceRef\configuration.svcinfo" />
     <None Include="Connected Services\ProductServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Connected Services\PurchaseServiceRef\ASP.NET_start.PurchaseServiceRef.PurchaseOrderContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PurchaseServiceRef\ASP.NET_start.PurchaseServiceRef.TerritoryContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\PurchaseServiceRef\PurchaseService.disco" />
+    <None Include="Connected Services\PurchaseServiceRef\configuration91.svcinfo" />
+    <None Include="Connected Services\PurchaseServiceRef\configuration.svcinfo" />
+    <None Include="Connected Services\PurchaseServiceRef\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -179,6 +199,16 @@
     </None>
     <Content Include="Properties\DataSources\DbModels.Production.Product.datasource" />
     <Content Include="Properties\DataSources\DbModels.DataContracts.ProductContract.datasource" />
+    <None Include="Connected Services\PurchaseServiceRef\PurchaseService.wsdl" />
+    <None Include="Connected Services\PurchaseServiceRef\PurchaseService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PurchaseServiceRef\PurchaseService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PurchaseServiceRef\PurchaseService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -206,6 +236,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Home\Detail.cshtml" />
+    <Content Include="Views\Purchase\Index.cshtml" />
+    <Content Include="Views\Purchase\Purchasing.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -238,6 +270,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\ProductServiceRef\" />
+    <WCFMetadataStorage Include="Connected Services\PurchaseServiceRef\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

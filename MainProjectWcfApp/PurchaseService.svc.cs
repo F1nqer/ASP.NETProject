@@ -32,7 +32,7 @@ namespace MainProjectWcfApp
             {
                 PurchaseOrderDetail pod = new PurchaseOrderDetail();
                 pod.PurchaseOrderID = uow.OrderHeader.GetAll().OrderByDescending(x => x.PurchaseOrderID).First().PurchaseOrderID;
-                pod.DueDate = DateTime.Now;
+                pod.DueDate = DateTime.Now; 
                 pod.OrderQty = (short)pq.Quantity;
                 pod.ProductID = pq.Product.ProductID;
                 pod.UnitPrice = pq.Product.StandardCost;
