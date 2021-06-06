@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace WcfContracts.DataContracts
 {
     [DataContract]
-    public class UserData
+    public class UserContract
     {
         [DataMember]
         public string Id { get; set; }

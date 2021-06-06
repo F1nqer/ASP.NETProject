@@ -21,7 +21,7 @@ namespace MainProjectWcfApp
     {
         IdentityUnitOfWork Database = new IdentityUnitOfWork("Identity");
 
-        public OperationDetails Create(UserData userDto)
+        public OperationDetails Create(UserContract userDto)
         {
             ApplicationUser user;
             if (Database.UserManager.FindByEmail(userDto.Email) == null)
@@ -47,7 +47,7 @@ namespace MainProjectWcfApp
             }
         }
 
-        public ClaimsIdentityContract Authenticate(UserData userDto)
+        public ClaimsIdentityContract Authenticate(UserContract userDto)
         {
             ClaimsIdentityContract claim = null;
             // находим пользователя
@@ -60,7 +60,7 @@ namespace MainProjectWcfApp
         }
 
         // начальная инициализация бд
-        public void SetInitialData(UserData adminDto, List<string> roles)
+        public void SetInitialData(UserContract adminDto, List<string> roles)
         {
             foreach (string roleName in roles)
             {

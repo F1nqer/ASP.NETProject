@@ -15,9 +15,9 @@ namespace ASP.NET_start.UserServiceRef {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="UserData", Namespace="http://schemas.datacontract.org/2004/07/WcfContracts.DataContracts")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="UserContract", Namespace="http://schemas.datacontract.org/2004/07/WcfContracts.DataContracts")]
     [System.SerializableAttribute()]
-    public partial class UserData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class UserContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -233,18 +233,18 @@ namespace ASP.NET_start.UserServiceRef {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ClaimsIdentityData", Namespace="http://schemas.datacontract.org/2004/07/WcfContracts.DataContracts")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ClaimsIdentityContract", Namespace="http://schemas.datacontract.org/2004/07/WcfContracts.DataContracts")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(string[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ASP.NET_start.UserServiceRef.UserData))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ASP.NET_start.UserServiceRef.UserContract))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(ASP.NET_start.UserServiceRef.OperationDetails))]
-    public partial class ClaimsIdentityData : System.Security.Claims.ClaimsIdentity, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class ClaimsIdentityContract : System.Security.Claims.ClaimsIdentity, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Security.Claims.ClaimsIdentity testField;
+        private System.Security.Claims.ClaimsIdentity claimsField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -257,14 +257,14 @@ namespace ASP.NET_start.UserServiceRef {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Security.Claims.ClaimsIdentity test {
+        public System.Security.Claims.ClaimsIdentity claims {
             get {
-                return this.testField;
+                return this.claimsField;
             }
             set {
-                if ((object.ReferenceEquals(this.testField, value) != true)) {
-                    this.testField = value;
-                    this.RaisePropertyChanged("test");
+                if ((object.ReferenceEquals(this.claimsField, value) != true)) {
+                    this.claimsField = value;
+                    this.RaisePropertyChanged("claims");
                 }
             }
         }
@@ -284,22 +284,22 @@ namespace ASP.NET_start.UserServiceRef {
     public interface IUserService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/Create", ReplyAction="http://tempuri.org/IUserService/CreateResponse")]
-        ASP.NET_start.UserServiceRef.OperationDetails Create(ASP.NET_start.UserServiceRef.UserData userDto);
+        ASP.NET_start.UserServiceRef.OperationDetails Create(ASP.NET_start.UserServiceRef.UserContract userDto);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/Create", ReplyAction="http://tempuri.org/IUserService/CreateResponse")]
-        System.Threading.Tasks.Task<ASP.NET_start.UserServiceRef.OperationDetails> CreateAsync(ASP.NET_start.UserServiceRef.UserData userDto);
+        System.Threading.Tasks.Task<ASP.NET_start.UserServiceRef.OperationDetails> CreateAsync(ASP.NET_start.UserServiceRef.UserContract userDto);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/Authenticate", ReplyAction="http://tempuri.org/IUserService/AuthenticateResponse")]
-        ASP.NET_start.UserServiceRef.ClaimsIdentityData Authenticate(ASP.NET_start.UserServiceRef.UserData userDto);
+        ASP.NET_start.UserServiceRef.ClaimsIdentityContract Authenticate(ASP.NET_start.UserServiceRef.UserContract userDto);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/Authenticate", ReplyAction="http://tempuri.org/IUserService/AuthenticateResponse")]
-        System.Threading.Tasks.Task<ASP.NET_start.UserServiceRef.ClaimsIdentityData> AuthenticateAsync(ASP.NET_start.UserServiceRef.UserData userDto);
+        System.Threading.Tasks.Task<ASP.NET_start.UserServiceRef.ClaimsIdentityContract> AuthenticateAsync(ASP.NET_start.UserServiceRef.UserContract userDto);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/SetInitialData", ReplyAction="http://tempuri.org/IUserService/SetInitialDataResponse")]
-        void SetInitialData(ASP.NET_start.UserServiceRef.UserData adminDto, string[] roles);
+        void SetInitialData(ASP.NET_start.UserServiceRef.UserContract adminDto, string[] roles);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/SetInitialData", ReplyAction="http://tempuri.org/IUserService/SetInitialDataResponse")]
-        System.Threading.Tasks.Task SetInitialDataAsync(ASP.NET_start.UserServiceRef.UserData adminDto, string[] roles);
+        System.Threading.Tasks.Task SetInitialDataAsync(ASP.NET_start.UserServiceRef.UserContract adminDto, string[] roles);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -329,27 +329,27 @@ namespace ASP.NET_start.UserServiceRef {
                 base(binding, remoteAddress) {
         }
         
-        public ASP.NET_start.UserServiceRef.OperationDetails Create(ASP.NET_start.UserServiceRef.UserData userDto) {
+        public ASP.NET_start.UserServiceRef.OperationDetails Create(ASP.NET_start.UserServiceRef.UserContract userDto) {
             return base.Channel.Create(userDto);
         }
         
-        public System.Threading.Tasks.Task<ASP.NET_start.UserServiceRef.OperationDetails> CreateAsync(ASP.NET_start.UserServiceRef.UserData userDto) {
+        public System.Threading.Tasks.Task<ASP.NET_start.UserServiceRef.OperationDetails> CreateAsync(ASP.NET_start.UserServiceRef.UserContract userDto) {
             return base.Channel.CreateAsync(userDto);
         }
         
-        public ASP.NET_start.UserServiceRef.ClaimsIdentityData Authenticate(ASP.NET_start.UserServiceRef.UserData userDto) {
+        public ASP.NET_start.UserServiceRef.ClaimsIdentityContract Authenticate(ASP.NET_start.UserServiceRef.UserContract userDto) {
             return base.Channel.Authenticate(userDto);
         }
         
-        public System.Threading.Tasks.Task<ASP.NET_start.UserServiceRef.ClaimsIdentityData> AuthenticateAsync(ASP.NET_start.UserServiceRef.UserData userDto) {
+        public System.Threading.Tasks.Task<ASP.NET_start.UserServiceRef.ClaimsIdentityContract> AuthenticateAsync(ASP.NET_start.UserServiceRef.UserContract userDto) {
             return base.Channel.AuthenticateAsync(userDto);
         }
         
-        public void SetInitialData(ASP.NET_start.UserServiceRef.UserData adminDto, string[] roles) {
+        public void SetInitialData(ASP.NET_start.UserServiceRef.UserContract adminDto, string[] roles) {
             base.Channel.SetInitialData(adminDto, roles);
         }
         
-        public System.Threading.Tasks.Task SetInitialDataAsync(ASP.NET_start.UserServiceRef.UserData adminDto, string[] roles) {
+        public System.Threading.Tasks.Task SetInitialDataAsync(ASP.NET_start.UserServiceRef.UserContract adminDto, string[] roles) {
             return base.Channel.SetInitialDataAsync(adminDto, roles);
         }
     }

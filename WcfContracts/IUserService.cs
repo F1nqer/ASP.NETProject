@@ -13,10 +13,10 @@ namespace WcfContracts
     public interface IUserService : IDisposable
     {
         [OperationContract]
-        OperationDetails Create(UserData userDto);
+        OperationDetails Create(UserContract userDto);
         [OperationContract]
-        ClaimsIdentityContract Authenticate(UserData userDto);
+        ClaimsIdentityContract Authenticate(UserContract userDto);
         [OperationContract]
-        void SetInitialData(UserData adminDto, List<string> roles);
+        void SetInitialData(UserContract adminDto, List<string> roles);
     }
 }

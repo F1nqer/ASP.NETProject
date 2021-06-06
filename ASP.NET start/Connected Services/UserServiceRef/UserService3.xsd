@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WcfContracts.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WcfContracts.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:57255/UserService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Security.Claims" />
-  <xs:complexType name="UserData">
+  <xs:complexType name="UserContract">
     <xs:sequence>
       <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
@@ -12,7 +12,7 @@
       <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="UserData" nillable="true" type="tns:UserData" />
+  <xs:element name="UserContract" nillable="true" type="tns:UserContract" />
   <xs:complexType name="OperationDetails">
     <xs:sequence>
       <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
@@ -21,14 +21,14 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="OperationDetails" nillable="true" type="tns:OperationDetails" />
-  <xs:complexType name="ClaimsIdentityData">
+  <xs:complexType name="ClaimsIdentityContract">
     <xs:complexContent mixed="false">
       <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/System.Security.Claims" base="q1:ClaimsIdentity">
         <xs:sequence>
-          <xs:element minOccurs="0" name="test" nillable="true" type="q1:ClaimsIdentity" />
+          <xs:element minOccurs="0" name="claims" nillable="true" type="q1:ClaimsIdentity" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="ClaimsIdentityData" nillable="true" type="tns:ClaimsIdentityData" />
+  <xs:element name="ClaimsIdentityContract" nillable="true" type="tns:ClaimsIdentityContract" />
 </xs:schema>

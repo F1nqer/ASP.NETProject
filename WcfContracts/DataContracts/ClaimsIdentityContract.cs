@@ -12,10 +12,10 @@ namespace WcfContracts.DataContracts
     public class ClaimsIdentityContract : ClaimsIdentity
     {
         [DataMember]
-        public ClaimsIdentity test;
-        public ClaimsIdentityContract(ClaimsIdentity check)
+        public ClaimsIdentity claims;
+        public ClaimsIdentityContract(ClaimsIdentity claims)
         {
-            test = check;
+            this.claims = claims;
         }
     }
 }

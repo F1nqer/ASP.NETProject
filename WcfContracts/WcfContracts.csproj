@@ -51,7 +51,7 @@
     <Compile Include="DataContracts\ProductPageContract.cs" />
     <Compile Include="DataContracts\PurchaseOrderContract.cs" />
     <Compile Include="DataContracts\TerritoryContract.cs" />
-    <Compile Include="DataContracts\UserData.cs" />
+    <Compile Include="DataContracts\UserContract.cs" />
     <Compile Include="IProjectService.cs" />
     <Compile Include="IPurchaseService.cs" />
     <Compile Include="IUserService.cs" />

@@ -5,7 +5,7 @@
   <xs:element name="Create">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WcfContracts.DataContracts" minOccurs="0" name="userDto" nillable="true" type="q1:UserData" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WcfContracts.DataContracts" minOccurs="0" name="userDto" nillable="true" type="q1:UserContract" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -19,21 +19,21 @@
   <xs:element name="Authenticate">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WcfContracts.DataContracts" minOccurs="0" name="userDto" nillable="true" type="q3:UserData" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WcfContracts.DataContracts" minOccurs="0" name="userDto" nillable="true" type="q3:UserContract" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AuthenticateResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WcfContracts.DataContracts" minOccurs="0" name="AuthenticateResult" nillable="true" type="q4:ClaimsIdentityData" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WcfContracts.DataContracts" minOccurs="0" name="AuthenticateResult" nillable="true" type="q4:ClaimsIdentityContract" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SetInitialData">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WcfContracts.DataContracts" minOccurs="0" name="adminDto" nillable="true" type="q5:UserData" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WcfContracts.DataContracts" minOccurs="0" name="adminDto" nillable="true" type="q5:UserContract" />
         <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="roles" nillable="true" type="q6:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
