@@ -8,7 +8,7 @@ using BusinessLogics;
 
 namespace WcfContracts
 {
-    public static class Transleters
+    public static class Transletors
     {
         static ProductionUnitOfWork uow = new ProductionUnitOfWork();
         public static ProductContract ProductToContract(Product PModel)

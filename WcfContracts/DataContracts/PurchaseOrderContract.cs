@@ -40,7 +40,7 @@ namespace WcfContracts.DataContracts
             foreach (var pod in poh.PurchaseOrderDetail)
             {
                 ProductContract pd = new ProductContract();
-                pd = Transleters.ProductToContract(uow.Product.Get(pod.ProductID));
+                pd = Transletors.ProductToContract(uow.Product.Get(pod.ProductID));
                 CartLine cl = new CartLine();
                 cl.Product = pd;
                 cl.Quantity = pod.OrderQty;

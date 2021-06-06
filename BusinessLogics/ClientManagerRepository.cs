@@ -36,6 +36,10 @@ namespace BusinessLogics
         {
             return Database.ClientProfiles.ToList();
         }
+        public ClientProfile Get(string Id)
+        {
+            return Database.ClientProfiles.Find(Id);
+        }
 
         public void Dispose()
         {

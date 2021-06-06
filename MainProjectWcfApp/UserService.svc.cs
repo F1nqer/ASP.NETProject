@@ -20,6 +20,7 @@ namespace MainProjectWcfApp
     public class UserService : IUserService
     {
         IdentityUnitOfWork Database = new IdentityUnitOfWork("Identity");
+        ProductionUnitOfWork DatabaseProd = new ProductionUnitOfWork();
 
         public OperationDetails Create(UserContract userDto)
         {
@@ -73,6 +74,27 @@ namespace MainProjectWcfApp
             }
             Create(adminDto);
         }
+
+        public List<PurchaseOrderContract> GetOrders(string name)
+        {
+            var user = Database.UserManager.FindByEmail(name);
+            var client = Database.ClientManager.GetAll().Where(x => x.Id == user.Id).First();
+            List<PurchaseOrderContract> list = Transletors.ModelListToPurchaseOrderContractList(DatabaseProd.OrderHeader.GetAll().Where(x => x.CustomerID == client.CustomerId));
+            return list;
+        }
+
+        public UserContract GetInfo(string name)
+        {
+            var user = Database.UserManager.FindByEmail(name);
+            var client = Database.ClientManager.Get(user.Id);
+            UserContract contract = new UserContract();
+            contract.Name = user.UserName;
+            contract.Email = user.Email;
+            contract.CustomerId = client.CustomerId;
+            return contract;
+
+        }
+
 
         public void Dispose()
         {

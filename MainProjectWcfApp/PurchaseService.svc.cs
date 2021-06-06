@@ -18,7 +18,7 @@ namespace MainProjectWcfApp
         ProductionUnitOfWork uow = new ProductionUnitOfWork();
         public List<PurchaseOrderContract> GetAll()
         {
-            return Transleters.ModelListToPurchaseOrderContractList(uow.OrderHeader.GetAll());
+            return Transletors.ModelListToPurchaseOrderContractList(uow.OrderHeader.GetAll());
         }
         public PurchaseOrderContract Get(int id)
         {
@@ -27,7 +27,7 @@ namespace MainProjectWcfApp
 
         public void Create(PurchaseOrderContract item)
         {
-            uow.OrderHeader.Create(Transleters.PurchaseOrderContractToModel(item));
+            uow.OrderHeader.Create(Transletors.PurchaseOrderContractToModel(item));
             foreach (var pq in item.OrderProducts)
             {
                 PurchaseOrderDetail pod = new PurchaseOrderDetail();
@@ -46,7 +46,7 @@ namespace MainProjectWcfApp
         }
         public void Update(PurchaseOrderContract item)
         {
-            uow.OrderHeader.Update(Transleters.PurchaseOrderContractToModel(item));
+            uow.OrderHeader.Update(Transletors.PurchaseOrderContractToModel(item));
         }
         public void Delete(int id)
         {
@@ -54,7 +54,7 @@ namespace MainProjectWcfApp
         }
         public List<TerritoryContract> GetTerritory()
         {
-            return Transleters.TerritoriesToContracts(uow.SalesTerritory.GetAll().ToList());
+            return Transletors.TerritoriesToContracts(uow.SalesTerritory.GetAll().ToList());
         }
     }
 }

@@ -18,5 +18,10 @@ namespace WcfContracts
         ClaimsIdentityContract Authenticate(UserContract userDto);
         [OperationContract]
         void SetInitialData(UserContract adminDto, List<string> roles);
+        [OperationContract]
+        List<PurchaseOrderContract> GetOrders(string name);
+        [OperationContract]
+        UserContract GetInfo(string name);
+        
     }
 }

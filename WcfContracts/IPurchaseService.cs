@@ -23,6 +23,6 @@ namespace WcfContracts
         [OperationContract]
         void Delete(int id);
         [OperationContract]
-        List<TerritoryContract> GetTerritory();
+        List<TerritoryContract> GetTerritory(); 
     }
 }

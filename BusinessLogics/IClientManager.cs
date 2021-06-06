@@ -11,5 +11,6 @@ namespace BusinessLogics
     {
         void Create(ClientProfile item);
         List<ClientProfile> GetAll();
+        ClientProfile Get(string Id);
     }
 }

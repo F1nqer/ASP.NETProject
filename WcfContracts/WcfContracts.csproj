@@ -56,7 +56,7 @@
     <Compile Include="IPurchaseService.cs" />
     <Compile Include="IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Transleters.cs" />
+    <Compile Include="Transletors.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessLogics\BusinessLogics.csproj">

@@ -17,7 +17,7 @@ namespace MainProjectWcfApp
 
         public List<ProductContract> GetAll()
         {
-            return Transleters.ProductListToContract(db.Product.GetAllInInventory());
+            return Transletors.ProductListToContract(db.Product.GetAllInInventory());
         }
 
         public ProductPageContract GetPage(int page = 1)
@@ -26,7 +26,7 @@ namespace MainProjectWcfApp
             int count = db.Product.GetAll().Where(p => p.ProductInventory.Sum(q => q.Quantity) > 0 && p.StandardCost != 0).Count();
             ProductPageContract mainPage = new ProductPageContract
             {
-                Products = Transleters.ProductListToContract(db.Product.GetAll()
+                Products = Transletors.ProductListToContract(db.Product.GetAll()
                 .Where(p => p.ProductInventory.Sum(q => q.Quantity) > 0 && p.StandardCost != 0)
                 .OrderBy(p => p.ProductID)
                 .Skip((page - 1) * PageSize)
@@ -45,17 +45,17 @@ namespace MainProjectWcfApp
         public ProductContract Get(int id)
         {
             Product p = db.Product.Get(id);
-            return Transleters.ProductToContract(p);
+            return Transletors.ProductToContract(p);
         }
 
         public void Create(ProductContract product)
         {
-            db.Product.Create(Transleters.ContractToProduct(product));
+            db.Product.Create(Transletors.ContractToProduct(product));
         }
 
         public void Update(ProductContract product)
         {
-            db.Product.Update(Transleters.ContractToProduct(product));
+            db.Product.Update(Transletors.ContractToProduct(product));
         }
 
         public void Delete(int id)

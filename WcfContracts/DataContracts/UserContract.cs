@@ -24,5 +24,7 @@ namespace WcfContracts.DataContracts
         public string Address { get; set; }
         [DataMember]
         public string Role { get; set; }
+        [DataMember]
+        public int? CustomerId { get; set; }
     }
 }
