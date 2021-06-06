@@ -44,13 +44,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContracts\CartLine.cs" />
+    <Compile Include="DataContracts\ClaimsIdentityContract.cs" />
+    <Compile Include="DataContracts\OperationDetails.cs" />
     <Compile Include="DataContracts\PageInfo.cs" />
     <Compile Include="DataContracts\ProductContract.cs" />
     <Compile Include="DataContracts\ProductPageContract.cs" />
     <Compile Include="DataContracts\PurchaseOrderContract.cs" />
     <Compile Include="DataContracts\TerritoryContract.cs" />
+    <Compile Include="DataContracts\UserData.cs" />
     <Compile Include="IProjectService.cs" />
     <Compile Include="IPurchaseService.cs" />
+    <Compile Include="IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Transleters.cs" />
   </ItemGroup>

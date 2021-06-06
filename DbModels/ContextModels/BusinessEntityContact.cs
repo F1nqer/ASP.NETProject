@@ -9,7 +9,7 @@ namespace DbModels.ContextModels
     [Table("Person.BusinessEntityContact")]
     public partial class BusinessEntityContact
     {
-        [Key]
+        [Key]   
         [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int BusinessEntityID { get; set; }
