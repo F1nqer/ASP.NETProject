@@ -1,0 +1,39 @@
+﻿@model ASP.NET_start.UserServiceRef.PurchaseOrderContract[]
+@{
+    ViewBag.Title = "UserPurchases";
+}
+
+<h2>UserPurchases</h2>
+<div>
+    <h3>Все заказы</h3>
+    <table>
+        <tr>
+            <th>Cтатус</th>
+            <th>Дата изменения</th>
+            <th>Общая стоимость</th>
+            <th>Товары</th>
+        </tr>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>
+                    <p>@p.Status</p>
+                </td>
+                <td>
+                    <p>@p.ModifiedDate</p>
+                </td>
+                <td>
+                    <p>@p.SubTotal</p>
+                </td>
+                <td>
+                    @foreach(var c in p.OrderProducts)
+                    {
+                        <p>@c.Product.Name</p>
+                    }
+                </td>
+                
+            </tr>
+        }
+    </table>
+</div>
+

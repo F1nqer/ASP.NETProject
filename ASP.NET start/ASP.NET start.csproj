@@ -216,6 +216,12 @@
     <Content Include="Connected Services\UserServiceRef\ASP.NET_start.UserServiceRef.ClaimsIdentityContract.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\UserServiceRef\ASP.NET_start.UserServiceRef.PurchaseOrderContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UserServiceRef\ASP.NET_start.UserServiceRef.UserContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\UserServiceRef\UserService.disco" />
     <None Include="Connected Services\UserServiceRef\configuration91.svcinfo" />
     <None Include="Connected Services\UserServiceRef\configuration.svcinfo" />
@@ -303,6 +309,7 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\SuccessRegister.cshtml" />
+    <Content Include="Views\Purchase\UserPurchases.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

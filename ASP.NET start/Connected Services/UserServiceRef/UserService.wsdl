@@ -27,6 +27,18 @@
   <wsdl:message name="IUserService_SetInitialData_OutputMessage">
     <wsdl:part name="parameters" element="tns:SetInitialDataResponse" />
   </wsdl:message>
+  <wsdl:message name="IUserService_GetOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrders" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInfo" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInfoResponse" />
+  </wsdl:message>
   <wsdl:portType name="IUserService">
     <wsdl:operation name="Create">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserService/Create" message="tns:IUserService_Create_InputMessage" />
@@ -39,6 +51,14 @@
     <wsdl:operation name="SetInitialData">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserService/SetInitialData" message="tns:IUserService_SetInitialData_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUserService/SetInitialDataResponse" message="tns:IUserService_SetInitialData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrders">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetOrders" message="tns:IUserService_GetOrders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetOrdersResponse" message="tns:IUserService_GetOrders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetInfo" message="tns:IUserService_GetInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetInfoResponse" message="tns:IUserService_GetInfo_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IUserService" type="tns:IUserService">
@@ -63,6 +83,24 @@
     </wsdl:operation>
     <wsdl:operation name="SetInitialData">
       <soap:operation soapAction="http://tempuri.org/IUserService/SetInitialData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrders">
+      <soap:operation soapAction="http://tempuri.org/IUserService/GetOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInfo">
+      <soap:operation soapAction="http://tempuri.org/IUserService/GetInfo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

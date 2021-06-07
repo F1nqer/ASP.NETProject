@@ -26,6 +26,9 @@ namespace ASP.NET_start.UserServiceRef {
         private string AddressField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> CustomerIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string EmailField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -62,6 +65,19 @@ namespace ASP.NET_start.UserServiceRef {
                 if ((object.ReferenceEquals(this.AddressField, value) != true)) {
                     this.AddressField = value;
                     this.RaisePropertyChanged("Address");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> CustomerId {
+            get {
+                return this.CustomerIdField;
+            }
+            set {
+                if ((this.CustomerIdField.Equals(value) != true)) {
+                    this.CustomerIdField = value;
+                    this.RaisePropertyChanged("CustomerId");
                 }
             }
         }
@@ -238,6 +254,11 @@ namespace ASP.NET_start.UserServiceRef {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(string[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(ASP.NET_start.UserServiceRef.UserContract))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(ASP.NET_start.UserServiceRef.OperationDetails))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ASP.NET_start.UserServiceRef.PurchaseOrderContract[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ASP.NET_start.UserServiceRef.PurchaseOrderContract))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ASP.NET_start.UserServiceRef.CartLine[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ASP.NET_start.UserServiceRef.CartLine))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ASP.NET_start.UserServiceRef.ProductContract))]
     public partial class ClaimsIdentityContract : System.Security.Claims.ClaimsIdentity, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -279,6 +300,525 @@ namespace ASP.NET_start.UserServiceRef {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PurchaseOrderContract", Namespace="http://schemas.datacontract.org/2004/07/WcfContracts.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class PurchaseOrderContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> CustomerIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int EmployeeIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ModifiedDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ASP.NET_start.UserServiceRef.CartLine[] OrderProductsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte StatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal SubTotalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> TerritoryIDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> CustomerID {
+            get {
+                return this.CustomerIDField;
+            }
+            set {
+                if ((this.CustomerIDField.Equals(value) != true)) {
+                    this.CustomerIDField = value;
+                    this.RaisePropertyChanged("CustomerID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int EmployeeID {
+            get {
+                return this.EmployeeIDField;
+            }
+            set {
+                if ((this.EmployeeIDField.Equals(value) != true)) {
+                    this.EmployeeIDField = value;
+                    this.RaisePropertyChanged("EmployeeID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ModifiedDate {
+            get {
+                return this.ModifiedDateField;
+            }
+            set {
+                if ((this.ModifiedDateField.Equals(value) != true)) {
+                    this.ModifiedDateField = value;
+                    this.RaisePropertyChanged("ModifiedDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ASP.NET_start.UserServiceRef.CartLine[] OrderProducts {
+            get {
+                return this.OrderProductsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrderProductsField, value) != true)) {
+                    this.OrderProductsField = value;
+                    this.RaisePropertyChanged("OrderProducts");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte Status {
+            get {
+                return this.StatusField;
+            }
+            set {
+                if ((this.StatusField.Equals(value) != true)) {
+                    this.StatusField = value;
+                    this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal SubTotal {
+            get {
+                return this.SubTotalField;
+            }
+            set {
+                if ((this.SubTotalField.Equals(value) != true)) {
+                    this.SubTotalField = value;
+                    this.RaisePropertyChanged("SubTotal");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> TerritoryID {
+            get {
+                return this.TerritoryIDField;
+            }
+            set {
+                if ((this.TerritoryIDField.Equals(value) != true)) {
+                    this.TerritoryIDField = value;
+                    this.RaisePropertyChanged("TerritoryID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CartLine", Namespace="http://schemas.datacontract.org/2004/07/WcfContracts.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class CartLine : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ASP.NET_start.UserServiceRef.ProductContract ProductField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int QuantityField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ASP.NET_start.UserServiceRef.ProductContract Product {
+            get {
+                return this.ProductField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductField, value) != true)) {
+                    this.ProductField = value;
+                    this.RaisePropertyChanged("Product");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Quantity {
+            get {
+                return this.QuantityField;
+            }
+            set {
+                if ((this.QuantityField.Equals(value) != true)) {
+                    this.QuantityField = value;
+                    this.RaisePropertyChanged("Quantity");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProductContract", Namespace="http://schemas.datacontract.org/2004/07/WcfContracts.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class ProductContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ClassField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ColorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DaysToManufactureField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte[] LargePhotoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal ListPriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ModifiedDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProductIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductLineField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> ProductModelIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private short SafetyStockLevelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SizeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal StandardCostField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StyleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte[] ThumbNailPhotoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> WeightField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Class {
+            get {
+                return this.ClassField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ClassField, value) != true)) {
+                    this.ClassField = value;
+                    this.RaisePropertyChanged("Class");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Color {
+            get {
+                return this.ColorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ColorField, value) != true)) {
+                    this.ColorField = value;
+                    this.RaisePropertyChanged("Color");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int DaysToManufacture {
+            get {
+                return this.DaysToManufactureField;
+            }
+            set {
+                if ((this.DaysToManufactureField.Equals(value) != true)) {
+                    this.DaysToManufactureField = value;
+                    this.RaisePropertyChanged("DaysToManufacture");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] LargePhoto {
+            get {
+                return this.LargePhotoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LargePhotoField, value) != true)) {
+                    this.LargePhotoField = value;
+                    this.RaisePropertyChanged("LargePhoto");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal ListPrice {
+            get {
+                return this.ListPriceField;
+            }
+            set {
+                if ((this.ListPriceField.Equals(value) != true)) {
+                    this.ListPriceField = value;
+                    this.RaisePropertyChanged("ListPrice");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ModifiedDate {
+            get {
+                return this.ModifiedDateField;
+            }
+            set {
+                if ((this.ModifiedDateField.Equals(value) != true)) {
+                    this.ModifiedDateField = value;
+                    this.RaisePropertyChanged("ModifiedDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProductID {
+            get {
+                return this.ProductIDField;
+            }
+            set {
+                if ((this.ProductIDField.Equals(value) != true)) {
+                    this.ProductIDField = value;
+                    this.RaisePropertyChanged("ProductID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductLine {
+            get {
+                return this.ProductLineField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductLineField, value) != true)) {
+                    this.ProductLineField = value;
+                    this.RaisePropertyChanged("ProductLine");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> ProductModelID {
+            get {
+                return this.ProductModelIDField;
+            }
+            set {
+                if ((this.ProductModelIDField.Equals(value) != true)) {
+                    this.ProductModelIDField = value;
+                    this.RaisePropertyChanged("ProductModelID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductNumber {
+            get {
+                return this.ProductNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductNumberField, value) != true)) {
+                    this.ProductNumberField = value;
+                    this.RaisePropertyChanged("ProductNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public short SafetyStockLevel {
+            get {
+                return this.SafetyStockLevelField;
+            }
+            set {
+                if ((this.SafetyStockLevelField.Equals(value) != true)) {
+                    this.SafetyStockLevelField = value;
+                    this.RaisePropertyChanged("SafetyStockLevel");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Size {
+            get {
+                return this.SizeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SizeField, value) != true)) {
+                    this.SizeField = value;
+                    this.RaisePropertyChanged("Size");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal StandardCost {
+            get {
+                return this.StandardCostField;
+            }
+            set {
+                if ((this.StandardCostField.Equals(value) != true)) {
+                    this.StandardCostField = value;
+                    this.RaisePropertyChanged("StandardCost");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Style {
+            get {
+                return this.StyleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StyleField, value) != true)) {
+                    this.StyleField = value;
+                    this.RaisePropertyChanged("Style");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] ThumbNailPhoto {
+            get {
+                return this.ThumbNailPhotoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ThumbNailPhotoField, value) != true)) {
+                    this.ThumbNailPhotoField = value;
+                    this.RaisePropertyChanged("ThumbNailPhoto");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> Weight {
+            get {
+                return this.WeightField;
+            }
+            set {
+                if ((this.WeightField.Equals(value) != true)) {
+                    this.WeightField = value;
+                    this.RaisePropertyChanged("Weight");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="UserServiceRef.IUserService")]
     public interface IUserService {
@@ -300,6 +840,18 @@ namespace ASP.NET_start.UserServiceRef {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/SetInitialData", ReplyAction="http://tempuri.org/IUserService/SetInitialDataResponse")]
         System.Threading.Tasks.Task SetInitialDataAsync(ASP.NET_start.UserServiceRef.UserContract adminDto, string[] roles);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetOrders", ReplyAction="http://tempuri.org/IUserService/GetOrdersResponse")]
+        ASP.NET_start.UserServiceRef.PurchaseOrderContract[] GetOrders(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetOrders", ReplyAction="http://tempuri.org/IUserService/GetOrdersResponse")]
+        System.Threading.Tasks.Task<ASP.NET_start.UserServiceRef.PurchaseOrderContract[]> GetOrdersAsync(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetInfo", ReplyAction="http://tempuri.org/IUserService/GetInfoResponse")]
+        ASP.NET_start.UserServiceRef.UserContract GetInfo(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetInfo", ReplyAction="http://tempuri.org/IUserService/GetInfoResponse")]
+        System.Threading.Tasks.Task<ASP.NET_start.UserServiceRef.UserContract> GetInfoAsync(string name);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -351,6 +903,22 @@ namespace ASP.NET_start.UserServiceRef {
         
         public System.Threading.Tasks.Task SetInitialDataAsync(ASP.NET_start.UserServiceRef.UserContract adminDto, string[] roles) {
             return base.Channel.SetInitialDataAsync(adminDto, roles);
+        }
+        
+        public ASP.NET_start.UserServiceRef.PurchaseOrderContract[] GetOrders(string name) {
+            return base.Channel.GetOrders(name);
+        }
+        
+        public System.Threading.Tasks.Task<ASP.NET_start.UserServiceRef.PurchaseOrderContract[]> GetOrdersAsync(string name) {
+            return base.Channel.GetOrdersAsync(name);
+        }
+        
+        public ASP.NET_start.UserServiceRef.UserContract GetInfo(string name) {
+            return base.Channel.GetInfo(name);
+        }
+        
+        public System.Threading.Tasks.Task<ASP.NET_start.UserServiceRef.UserContract> GetInfoAsync(string name) {
+            return base.Channel.GetInfoAsync(name);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace ASP.NET_start.Controllers
         {
             var cart  = GetCart();
             PurchaseServiceRef.PurchaseServiceOf_PurchaseOrderContractClient client = new PurchaseServiceRef.PurchaseServiceOf_PurchaseOrderContractClient();
-            PurchaseOrderContract poc = new PurchaseOrderContract();
+            PurchaseServiceRef.PurchaseOrderContract poc = new PurchaseServiceRef.PurchaseOrderContract();
             var terra = client.GetTerritory();
             SelectList territories = new SelectList(terra, "TerritoryID", "Name");
             ViewBag.terra = territories;
@@ -24,7 +24,7 @@ namespace ASP.NET_start.Controllers
             client.Close();
             return View(poc);
         }
-        public ActionResult Purchasing(PurchaseOrderContract poc)
+        public ActionResult Purchasing(PurchaseServiceRef.PurchaseOrderContract poc)
         {
             Cart cart = GetCart();
             poc.OrderProducts = cart.Lines.ToArray();
@@ -43,7 +43,7 @@ namespace ASP.NET_start.Controllers
                 poc.ModifiedDate = DateTime.Now;
                 if (User.Identity.IsAuthenticated)
                 {
-                    poc.CustomerID = userClient.GetInfo(User.Identity.Name);
+                    poc.CustomerID = userClient.GetInfo(User.Identity.Name).CustomerId;
                 }
                 client.Create(poc);
                 cart.Clear();
@@ -61,7 +61,7 @@ namespace ASP.NET_start.Controllers
                     }
             else
             {
-                return View("Index");
+                return RedirectToAction("Account");
             }
             
         }

@@ -4,6 +4,7 @@
   <xs:complexType name="UserContract">
     <xs:sequence>
       <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerId" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
@@ -31,4 +32,58 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="ClaimsIdentityContract" nillable="true" type="tns:ClaimsIdentityContract" />
+  <xs:complexType name="ArrayOfPurchaseOrderContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PurchaseOrderContract" nillable="true" type="tns:PurchaseOrderContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPurchaseOrderContract" nillable="true" type="tns:ArrayOfPurchaseOrderContract" />
+  <xs:complexType name="PurchaseOrderContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="EmployeeID" type="xs:int" />
+      <xs:element minOccurs="0" name="ModifiedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OrderProducts" nillable="true" type="tns:ArrayOfCartLine" />
+      <xs:element minOccurs="0" name="Status" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="SubTotal" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TerritoryID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PurchaseOrderContract" nillable="true" type="tns:PurchaseOrderContract" />
+  <xs:complexType name="ArrayOfCartLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CartLine" nillable="true" type="tns:CartLine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCartLine" nillable="true" type="tns:ArrayOfCartLine" />
+  <xs:complexType name="CartLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:ProductContract" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CartLine" nillable="true" type="tns:CartLine" />
+  <xs:complexType name="ProductContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Class" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Color" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DaysToManufacture" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LargePhoto" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="ListPrice" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ModifiedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductID" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductLine" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductModelID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SafetyStockLevel" type="xs:short" />
+      <xs:element minOccurs="0" name="Size" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StandardCost" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Style" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ThumbNailPhoto" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="Weight" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductContract" nillable="true" type="tns:ProductContract" />
 </xs:schema>
